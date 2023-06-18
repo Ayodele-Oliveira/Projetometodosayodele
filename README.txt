@@ -56,6 +56,11 @@ x(i+1) = (xi - f(xi))/f'(xi);
 9. Stop
 
 *****Secants Method****
+The idea is to follow the secant line to its intersection with the x-axis and use the point
+found as an approximation to the root.
+This is similar to Newton's method (which follows the tangent line).
+The great advantage of the secant method over the Newton-Raphson method is that it does not require the function f(x) to be differentiable and the algorithm does not need to compute the derivative. This is a facilitator since sometimes the derivatives can only be estimated.
+
 
 
 Notes about the project:
