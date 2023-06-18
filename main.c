@@ -6,7 +6,9 @@
 #include "bisection_func.h"
 #include "newton.h"
 #include "secant.h"
+#include "regular.h"
 
+int i = 0;
 
 int main() {
   //interval [a,b]
@@ -31,6 +33,7 @@ int main() {
       printf("\n\nA raíz pelo método da Secante é %lf.\n\n", secant_meth(a,b));
       break;
     case 4:
+      printf("\n\nA raíz pelo Método Regular-Falsi é %lf.\n\n", regular_falsi(a,b));
       break;
     default:
       printf("\nOPÇÃO ESCOLHIDA INVÁLIDA!\n");

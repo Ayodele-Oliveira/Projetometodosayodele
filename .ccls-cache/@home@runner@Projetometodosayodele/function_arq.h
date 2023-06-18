@@ -28,6 +28,6 @@ double calculating_x2(double x_beg,double x_one){
 //derivative of the function
 double derivative_function(double number)
 {
-  printf("%lf", -4.5+(4.5*cos(number)));
+  
   return (-4.5+(4.5*cos(number)));
 }

@@ -2,7 +2,7 @@
 #include <math.h>
 
 #define ERRO 1e-4
-#define MAX 5
+#define MAX 10
 
 
 
@@ -26,12 +26,11 @@ double secant_meth(double x_beg, double x_one)
   k = 1;
   
   //finding the roots
-  while(k <= MAX) 
+  while(k <= MAX);
   {
     
     x_two = calculating_x2(x_beg, x_one);
     
-  x_two=x_one-funcao(x_one)*((x_one-x_beg)/(funcao(x_one)-funcao(x_beg)));
    if(fabs(function(x_beg))< ERRO || fabs(x_one-x_beg)< ERRO)
     {
       x_final = x_two;

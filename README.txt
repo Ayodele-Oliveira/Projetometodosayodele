@@ -5,30 +5,66 @@ Aluna: Ayodele Dias de Oliveira
 Data de entrega: 19/06/2023
 
 
-No projeto é solicitado que encontremos as raízes pelos 4 métodos apresentados em sala de aula pelo professor, sendo os métodos: Método da Bisseção, Regular-False, Newton, Secante.
+In the project, we are asked to find the roots by the 4 methods presented in the classroom by the teacher, the methods being: Bisection Method, Regular-Falsi, Newton, Secant.
 
-****Método da Bisseção****
+****Bisection's Method****
 
-**** Método de Newton****
-Escolher um ponto X1 como estimativa da solução.
-      X2 é obtido a partir do cruzamento com o eixo da
-      reta tg a x no ponto (x1, f(x1))
+We have to check if the root is between a and b;
 
-      f'(x1)(derivada no ponto) = (f(x1) - 0)/ x2- x1;
+a = beginning the interval
+b = end the interval
+Xn = (a+b)/2;
 
-      x(i+1) = (xi - f(xi))/f'(xi);
+f(a)*f(b) to check if it is between these two numbers
 
-****Método Regular-False****
+f(a) * f(xn) = positive;
+
+f(b) * f(xn) = negative; (is between this interval, because there was a change of sign)
+
+if this occurs a must assume the value of xn;
+**** Newton's method****
+
+  Choose a point X1 as an estimate of the solution.
+   X2 is obtained from the intersection with the axis of line tan a x at the point (x1, f(x1))
+ f'(x1)(derivative at the point) = (f(x1) - 0)/ x2- x1;
+
+x(i+1) = (xi - f(xi))/f'(xi);
+
+****Regula-Falsi's method****
+
+1. start
+
+2. Define function f(x)
+
+3. Choose initial guesses x0 and x1 such that f(x0)f(x1) < 0
+
+4. Choose pre-specified tolerable error e.
+
+5. Calculate new approximated root as: 
+   
+   x2 = x0 - ((x0-x1) * f(x0))/(f(x0) - f(x1))
+
+6. Calculate f(x0)f(x2)
+	a. if f(x0)f(x2) < 0 then x0 = x0 and x1 = x2
+	b. if f(x0)f(x2) > 0 then x0 = x2 and x1 = x1
+	c. if f(x0)f(x2) = 0 then goto (8)
+	
+7. if |f(x2)|>e then goto (5) otherwise goto (8)
+
+8. Display x2 as root.
+
+9. Stop
+
+*****Secants Method****
 
 
-*****Método da Secante****
+Notes about the project:
+The function_arq.h file is a file containing functions necessary to implement the functions of the presented methods;
 
+The bisection.h file is the file that contains the algorithm for the Bisection Method, as the name already indicates;
 
-Observações a respeito do projeto:
-O arquivo function_arq.h é um arquivo contém funções necessárias para implementação das funções dos métodos apresentados;
+The newton.h file is the file that contains the algorithm for Newton's Method, as the name already indicates;
 
-O arquivo bisection.h é o arquivo que contém o algoritmo  para o Método Bisseção, como o nome já indica;
+The secant.h file, is the file that contains the algorithm for the Secant Method, as the name already indicates;
 
-O arquivo newton.h é o arquivo que contém o algoritmo para o Método de Newton, como o nome já indica;
-
-O arquivo secant.h é o arquivo que contém o algoritmo para o Método da Secante, como o nome já indica;
+The regular.h file is the file that contains the algorithm for the Regular-Falsi Method, as the name already indicates;
