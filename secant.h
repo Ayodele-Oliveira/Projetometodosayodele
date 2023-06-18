@@ -6,40 +6,34 @@
 
 
 
-double secant_meth(double x_beg, double x_one)
-{
-  int k = 0;
-  double x_two, x_final;
-
-  //checking if the first values are roots
-  if (fabs(function(x_beg))< ERRO)
-  {
-    	x_final  = x_beg;
-    	return x_final;
-  }
-  
-  if (fabs(function(x_one))< ERRO)
-  {
-    	x_final = x_one;
-    	return x_final;
-  }
-  k = 1;
-  
-  //finding the roots
-  while(k <= MAX);
-  {
-    
-    x_two = calculating_x2(x_beg, x_one);
-    
-   if(fabs(function(x_beg))< ERRO || fabs(x_one-x_beg)< ERRO)
-    {
-      x_final = x_two;
-      printf("\n\nA quantidade de iterações é: %d.\n\n", k);
-      return x_final;
+double secant_meth(double x0, double x1) {
+	int k;
+	
+    double xn, x2;
+    if (fabs(function(x0))<ERRO){
+    	xn  = x0;
+    	printf("Valor da raiz encontrada: %lf \n",xn);
+    	return xn;
     }
-    
-    x_beg = x_one;
-    x_one = x_two;
-    k++;
-}
+    if (fabs(function(x1))<ERRO){
+    	xn  = x1;
+    	
+    	return xn;
+    }
+    k = 1;
+    while (k <= MAX) {
+
+    	x2 = calculatingX2 (x0, x1);
+        
+        if(fabs(function(x0))<ERRO||fabs(x1-x0)<ERRO){
+        	xn = x2;
+        	return xn;
+        }
+        x0 = x1;
+        x1 = x2;
+        k+=1;
+    }
+
+
+	return 0;
 }

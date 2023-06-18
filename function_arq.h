@@ -19,10 +19,10 @@ int root_int(double interval_a, double interval_b)
 		return 0;
 }
 //calculating x_two for the Secant Method
-double calculating_x2(double x_beg,double x_one){
-    double x_two;
-    x_two = x_one-(function(x_one)/(function(x_one)-function(x_beg)))*(x_one-x_beg);
-    return x_two;
+double calculatingX2(double x0,double x1){
+    double x2;
+    x2 = x1-(function(x1)/(function(x1)-function(x0)))*(x1-x0);
+    return x2;
 }
 
 //derivative of the function
